@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Time Playground | Code A Difference</title><meta name="theme-color" content="#9b51d0"><meta name="description" content="See time grow into colour, or explore how a minute feels with a quiet bloom and a Snake game.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="brand.css">
+</head>
+<body>
+<a id="skip" class="skip" href="#choose-focus">Skip to activity</a>
+<div class="shell">
+<header><a class="wordmark" href="https://codeadifference.ct.ws/"><img class="brand-logo" src="assets/logo-128.webp" width="38" height="38" alt=""><span>Code A Difference</span></a><nav aria-label="Main navigation"><a href="https://codeadifference.ct.ws/#work">All tools <span aria-hidden="true">↗</span></a><a href="https://codeadifference.ct.ws/#feedback">Feedback</a></nav></header>
+<main>
+<div class="intro"><h1 id="page-title" tabindex="-1">Time Playground.</h1><p id="intro-copy">Let a little time turn into color.<br>Nothing to beat. No rush to finish.</p></div>
+<section id="home-view" aria-label="Choose how to spend your time">
+<div class="mode-choices">
+<button id="choose-focus" class="mode-choice"><svg id="home-bloom" class="mode-art" viewBox="0 0 360 320" aria-hidden="true"></svg><strong>Keep me company</strong><span>A quiet picture of time while you read, draw, or do your own thing.</span><span class="mode-action">Enter focus mode</span></button>
+<button id="choose-explore" class="mode-choice"><svg class="mode-art" viewBox="0 0 88 76" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" aria-hidden="true"><path d="M12 20h42v14H26v17h42"/><circle cx="70" cy="51" r="5" fill="currentColor"/><circle cx="66" cy="16" r="5"/></svg><strong>Explore how time feels</strong><span>Watch petals for a minute. Play Snake for a minute. Notice how each one felt.</span><span class="mode-action">Try the two-minute activity</span></button>
+</div><p class="home-note">Choose one before you begin. You can pause either activity whenever you need.</p><p id="saved-home" class="home-note" hidden>Your saved focus picture and note are ready in Keep me company.</p>
+</section>
+<section id="focus-view" aria-label="Focus mode" hidden><div class="mode-bar"><p>Keep me company · Focus mode</p><button id="leave-focus" class="button leave">Leave focus</button></div>
+<section class="playground" aria-label="Your time picture">
+<div class="scene"><div class="bloom-wrap"><svg id="bloom" class="bloom" viewBox="0 0 360 320" role="img" aria-label="An example of a colorful bloom. Each real bloom takes one minute."></svg></div><div class="scene-copy"><h2 id="scene-title">A minute can look like this.</h2><p id="scene-description">Six petals, one colorful bloom. Start whenever you like, and watch your own picture grow.</p><p id="elapsed" class="elapsed" hidden>Time spent: 0:00</p></div></div>
+<div class="collection"><p id="collection-label">Your colors stay<br>when you pause.</p><div id="blooms" class="blooms" aria-label="No completed blooms yet"><div class="seed-line" aria-hidden="true"><span></span><span></span><span></span></div></div></div>
+</section>
+<div class="controls"><button id="start" class="button primary">Start growing</button><button id="finish" class="button" disabled>All done</button></div>
+<section id="checkin" class="checkin" aria-labelledby="checkin-title" hidden><h2 id="checkin-title">A little check-in.</h2><p>Your picture is still growing. What feels right now?</p><div class="checkin-actions"><button id="continue" class="button primary">Keep going</button><button id="break" class="button">Take a break</button><button id="checkin-finish" class="button">All done</button></div></section>
+<section class="preferences" aria-label="Make it comfortable"><label class="checkin-choice" for="interval">Gentle check-in<select id="interval"><option value="0">No check-ins</option><option value="60000" selected>Every minute</option><option value="180000">Every 3 minutes</option><option value="300000">Every 5 minutes</option></select></label><div class="toggles"><label class="toggle-label"><input id="numbers" type="checkbox">Show time spent</label><label class="toggle-label"><input id="motion" type="checkbox" checked>Smooth growing</label></div></section>
+<section class="bookmark" aria-labelledby="bookmark-title"><div class="bookmark-intro"><h2 id="bookmark-title">Leave a little note for later.</h2><p>A pause can be part of the picture. Save where you are, then come back when you’re ready.</p><details><summary>What happens when I save?</summary><p>Your picture and note stay in this browser on this device. Saving pauses the picture. When you return, choose Resume growing.</p></details></div><div><label for="activity">What are you spending time with? <span>(optional)</span></label><input id="activity" maxlength="80" placeholder="Drawing, reading, just being…" autocomplete="off"><label class="note-label" for="note">Where would you like to pick up?</label><textarea id="note" maxlength="300" rows="2" placeholder="I was choosing colors for my drawing…"></textarea><div class="bookmark-actions"><button id="save" class="button">Save my place</button><button id="forget" class="quiet-button" hidden>Forget saved place</button></div><p id="save-status" class="save-status" role="status" aria-live="polite"></p></div></section>
+<details class="help"><summary>How time grows here</summary><p>A petal grows every ten seconds; six petals make one minute. Finished blooms stay below while the next one grows. There’s no target to fill and no sound or alarm. A check-in is an invitation: your picture keeps growing until you choose to pause or finish.</p><p>Turn off Smooth growing for still steps instead of continuous movement. Show time spent is optional and only counts up. Leaving this tab pauses your picture; return and choose Resume growing. Saving keeps your latest place in this browser.</p><p>Use Tab to move between controls and Space or Enter to press a button. Escape pauses. Notes are only stored when you choose Save my place; nothing is uploaded.</p></details>
+</section>
+<section id="explore-view" aria-label="Explore how time feels" hidden>
+<div class="mode-bar"><p>Explore how time feels</p><button id="leave-explore" class="button leave">Leave activity</button></div>
+<ol class="round-steps" aria-label="Activity steps"><li><button id="step-watch" type="button" aria-current="step">Watch</button></li><li><button id="step-play" type="button">Play</button></li><li><button id="step-compare" type="button">Compare</button></li></ol>
+<div id="round-view">
+<div class="round-intro"><h2 id="round-title" tabindex="-1">Watch a minute.</h2><p id="round-description">Watch the petals grow for one minute. Afterward, choose how that minute felt to you.</p></div>
+<div id="watch-stage" class="watch-stage"><svg id="watch-bloom" viewBox="0 0 360 320" role="img" aria-label="Your one-minute bloom is ready to grow."></svg><div><h3 id="watch-status">Ready when you are.</h3><p>There’s nothing to finish or get right. You can just watch.</p></div></div>
+<section id="snake-stage" class="snake-stage" aria-label="Snake game" hidden>
+ <div class="snake-board-wrap"><svg id="snake-board" viewBox="0 0 320 320" role="img" aria-label="Snake board. Use the direction buttons or arrow keys to steer."></svg></div>
+ <div class="snake-info"><h3>A little Snake break.</h3><p>Collect the gold dots. The edges wrap around; bumping into yourself starts a fresh snake and keeps your points.</p><p class="snake-score">Dots collected: <strong id="snake-score">0</strong></p><p id="snake-status" role="status">Start the minute when you’re ready.</p>
+ <div class="snake-directions" role="group" aria-label="Snake direction"><button class="button" data-direction="3" aria-label="Move up">↑</button><button class="button" data-direction="2" aria-label="Move left">←</button><button class="button" data-direction="1" aria-label="Move down">↓</button><button class="button" data-direction="0" aria-label="Move right">→</button></div>
+ <button id="snake-turn" class="button snake-turn">Turn clockwise <span aria-hidden="true">↻</span></button><p class="snake-key-help">Arrow keys or WASD to steer. Space turns clockwise. Escape pauses.</p></div>
+ </section>
+<div class="round-controls"><button id="round-control" class="button primary">Start watching</button><p id="round-status">One minute. No countdown.</p><label id="explore-motion-label" class="toggle-label"><input id="explore-motion" type="checkbox" checked>Smooth growing</label></div>
+
+<p class="experiment-note">Leaving this tab pauses the activity. Pauses don’t count toward the minute.</p>
+</div>
+<section id="reflection-view" class="reflection" aria-labelledby="reflection-title" hidden><h2 id="reflection-title" tabindex="-1">How did that minute feel?</h2><p id="reflection-context">You watched the petals grow.</p><div class="feelings" role="group" aria-label="How the minute felt"><button class="feeling" data-feeling="Slow" aria-pressed="false">Slow</button><button class="feeling" data-feeling="In-between" aria-pressed="false">In-between</button><button class="feeling" data-feeling="Fast" aria-pressed="false">Fast</button><button class="feeling" data-feeling="Not sure" aria-pressed="false">Not sure</button></div><p>There’s no right answer. Choose what you noticed.</p><button id="reflection-next" class="button primary" disabled>Next: play Snake</button></section>
+<section id="comparison-view" class="comparison" aria-labelledby="comparison-title" hidden><h2 id="comparison-title" tabindex="-1">Two minutes. Your experience.</h2><p id="comparison-summary">Your reflections will appear here after each activity.</p><div class="result-pair"><div class="result"><svg class="result-bloom" viewBox="0 0 360 320" aria-hidden="true"></svg><div><h3>Watching petals</h3><p>One minute</p><strong id="watch-answer"></strong></div></div><div class="result"><svg class="result-bloom" viewBox="0 0 360 320" aria-hidden="true"></svg><div><h3>Playing Snake</h3><p>One minute</p><strong id="play-answer"></strong></div></div></div><p>They may have felt different, similar, or hard to judge. What did you notice?</p><button id="try-again" class="button primary">Try again</button></section>
+</section>
+<p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+</main><footer><span><a href="https://codeadifference.ct.ws/">Code A Difference</a></span><span>No account · No alarms · Notes stay in this browser</span></footer>
+</div>
+<script src="snake.js" defer></script><script src="app.js" defer></script>
+</body>
+</html>
